@@ -1,102 +1,127 @@
 'use client'
 import { useMobileState } from "@/lib/state"
-import Image from "next/image"
 import Link from "next/link"
+import { Menu, X, ChevronDown } from 'lucide-react';
+
 
 const Index = () => {
     const {value, updateValue} = useMobileState(state => state)
     
   return (
-    <nav className="bg-white shadow-md">
-    <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-      {/* Logo */}
-      <div className="flex items-center">
-        <Link href="/">
-          
-            <Image src="/logo.png" alt="Atlassian Jira" width={120} height={40} />
-          
-        </Link>
-      </div>
+    <nav className="bg-white shadow-sm fixed w-full top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16 items-center">
+          {/* Logo and Brand */}
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center">
+              <span className="text-2xl font-bold text-blue-600">Logo</span>
+            </Link>
+          </div>
 
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center space-x-8">
-        <Link href="/features" className="text-gray-700 hover:text-blue-600">
-          Features
-        </Link>
-        <Link href="/product-guide" className="text-gray-700 hover:text-blue-600">
-          Product Guide
-        </Link>
-        <Link href="/templates"className="text-gray-700 hover:text-blue-600">
-          Templates
-        </Link>
-        <Link href="/pricing"className="text-gray-700 hover:text-blue-600">
-          Pricing
-        </Link>
-        <Link href="/enterprise"className="text-gray-700 hover:text-blue-600">
-          Enterprise
-        </Link>
-      </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="/features" className="text-gray-700 hover:text-blue-600">Features</a>
+            <div className="relative group">
+              <button className="flex items-center text-gray-700 hover:text-blue-600">
+                Solutions
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              <div className="absolute top-full -left-4 hidden group-hover:block bg-white border rounded-lg shadow-lg py-2 w-48">
+                <a href="/solution1" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Solution 1</a>
+                <a href="/solution2" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Solution 2</a>
+                <a href="/solution3" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Solution 3</a>
+              </div>
+            </div>
+            <a href="/product-guide" className="text-gray-700 hover:text-blue-600">Product guide</a>
+            <a href="/templates" className="text-gray-700 hover:text-blue-600">Templates</a>
+            <a href="/pricing" className="text-gray-700 hover:text-blue-600">Pricing</a>
+          </div>
 
-      {/* CTA Button (Desktop Only) */}
-      <div className="hidden md:block">
-        <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-          Get it Free
-        </button>
-      </div>
+          {/* Right Side Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <a href="/signin" className="text-gray-700 hover:text-blue-600">Sign in</a>
+            <a
+              href="/get-started"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Get it free
+            </a>
+          </div>
 
-      {/* Mobile Menu Toggle */}
-      <div className="md:hidden">
-        <button onClick={()=>updateValue(!value)} className="text-gray-700 focus:outline-none">
-          {value ? (
-            // Close Icon
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          ) : (
-            // Hamburger Icon
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          )}
-        </button>
-      </div>
-    </div>
-
-    {/* Mobile Navigation Menu */}
-    {value && (
-      <div className="md:hidden bg-white border-t border-gray-200">
-        <div className="px-4 py-2 flex flex-col space-y-2">
-          <Link href="/features" onClick={() => updateValue(false)} className="text-gray-700 hover:text-blue-600">
-            
-              Features
-            
-          </Link>
-          <Link href="/product-guide" onClick={() => updateValue(false)} className="text-gray-700 hover:text-blue-600">
-              Product Guide
-          </Link>
-          <Link href="/templates" onClick={() => updateValue(false)} className="text-gray-700 hover:text-blue-600">
-              Templates
-            
-          </Link>
-          <Link href="/pricing" onClick={() => updateValue(false)} className="text-gray-700 hover:text-blue-600">
-              Pricing
-          </Link>
-          <Link href="/enterprise" onClick={() => updateValue(false)} className="text-gray-700 hover:text-blue-600">
-              Enterprise
-          </Link>
-          <button
-            className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            onClick={() => updateValue(false)}
-          >
-            Get it Free
-          </button>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={()=>updateValue(!value)}
+              className="text-gray-700 hover:text-blue-600"
+            >
+              {value ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
-    )}
-  </nav>
+      
+      {/* Mobile Menu */}
+      {value && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+            <a
+              href="/features"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md"
+            >
+              Features
+            </a>
+            <div
+              className="relative group"
+            >
+              <button className="flex items-center text-gray-700 hover:text-blue-600">
+              
+
+              Solutions
+              <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              <div className="absolute top-full left-4 hidden group-hover:block bg-white border rounded-lg shadow-lg py-2 w-48">
+                <a href="/solution1" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Solution 1</a>
+                <a href="/solution2" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Solution 2</a>
+                <a href="/solution3" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Solution 3</a>
+              </div>
+
+            </div>
+            <a
+              href="/product-guide"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md"
+            >
+              Product guide
+            </a>
+            <a
+              href="/templates"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md"
+            >
+              Templates
+            </a>
+            <a
+              href="/pricing"
+              className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md"
+            >
+              Pricing
+            </a>
+            <div className="pt-4 space-y-2">
+              <a
+                href="/signin"
+                className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md"
+              >
+                Sign in
+              </a>
+              <a
+                href="/get-started"
+                className="block px-3 py-2 text-center bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              >
+                Get it free
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
   )
 }
 
