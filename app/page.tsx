@@ -1,10 +1,11 @@
 import Navbar from '../component/Navbar'
 import Footer from '../component/Footer'
+import Herosection from '../component/Herosection'
 export default function Home() {
   return (
     <div>
       <Navbar/>
-      main page
+      <Herosection/>
       <Footer/>
     </div>
   );
