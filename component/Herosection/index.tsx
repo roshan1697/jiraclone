@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import Card from '@/ui/card';
 
 
 const Index = () => {
@@ -23,20 +24,7 @@ const Index = () => {
                                 start with{' '}
                                 <span className="relative inline-block">
                                     Jira
-                                    {/* <svg
-                                        className="absolute -bottom-1.5 w-full"
-                                        height="16"
-                                        viewBox="0 0 200 16"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M0 8 C 40 0, 60 16, 100 8 C 140 0, 160 16, 200 8"
-                                            stroke="#FFA500"
-                                            strokeWidth="3"
-                                            strokeLinecap="round"
-                                        />
-                                    </svg> */}
+                                    
                                     <svg
                                         width="100"
                                         height="32"
@@ -138,6 +126,37 @@ const Index = () => {
                     </div>
                 </div>
             </div>
+            <div className="min-h-screen  px-12">
+      <div className="">
+        <div className="flex gap-2 overflow-auto">
+          <Card 
+            title="Software Development" 
+            subtitle="PRODUCT & ISSUE TRACKING"
+            imageUrl="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80"
+          />
+          <Card 
+            title="Marketing" 
+            subtitle="PLAN & LAUNCH CAMPAIGNS"
+            imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80"
+          />
+          <Card 
+            title="IT" 
+            subtitle="PLAN & TRACK IT PROJECTS"
+            imageUrl="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80"
+          />
+          <Card 
+            title="Design" 
+            subtitle="BUILD CREATIVE WORKFLOWS"
+            imageUrl="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=300&q=80"
+          />
+          <Card 
+            title="Operations" 
+            subtitle="CREATE CUSTOM PROCESSES"
+            imageUrl="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300&q=80"
+          />
+        </div>
+      </div>
+    </div>
         </div>
     )
 }
