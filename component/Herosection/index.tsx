@@ -11,10 +11,10 @@ const Index = () => {
         e.preventDefault()
     }
     return (
-        <div className="min-h-screen bg-[#F9FAFB]">
+        <div className="min-h-screen bg-[#F4F5F7]">
             <div>
 
-                <div className="max-w-[1200px] mx-auto px-6 py-16 lg:py-24">
+                <div className="max-w-[1200px] mx-auto px-6 py-16 ">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         {/* Left Column - Text Content */}
                         <div className="space-y-10">
@@ -24,7 +24,7 @@ const Index = () => {
                                 start with{' '}
                                 <span className="relative inline-block">
                                     Jira
-                                    
+
                                     <svg
                                         width="100"
                                         height="32"
@@ -55,30 +55,15 @@ const Index = () => {
                                 The only project management tool you need to plan and track work across every team.
                             </p>
 
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-3 text-[#374151]">
-                                    <CheckCircle2 className="h-5 w-5 text-[#2563EB] flex-shrink-0" />
-                                    <span className="text-[15px]">Seamless team collaboration</span>
-                                </div>
-                                <div className="flex items-center gap-3 text-[#374151]">
-                                    <CheckCircle2 className="h-5 w-5 text-[#2563EB] flex-shrink-0" />
-                                    <span className="text-[15px]">Real-time progress tracking</span>
-                                </div>
-                                <div className="flex items-center gap-3 text-[#374151]">
-                                    <CheckCircle2 className="h-5 w-5 text-[#2563EB] flex-shrink-0" />
-                                    <span className="text-[15px]">Customizable workflows</span>
-                                </div>
-                            </div>
+                            
                         </div>
 
                         {/* Right Column - Sign Up Form */}
                         <div className="p-8">
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="text-[20px] font-semibold text-[#111827]">Work email</h2>
-                                    <p className="text-[14px] text-[#6B7280] mt-1.5">
-                                        Find teammates, plus keep work and life separate by using your work email.
-                                    </p>
+                                    <h2 className="text-[15px] font-semibold text-[#111827]">Work email</h2>
+                                    
                                 </div>
 
                                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -91,6 +76,9 @@ const Index = () => {
                                             className="w-full px-4 py-[14px] rounded-[24px] border border-[#D1D5DB] text-[15px] placeholder-[#9CA3AF] focus:ring-2 focus:ring-[#3B82F6] focus:border-transparent outline-none transition-all bg-white"
                                             required
                                         />
+                                        <p className="text-[12px] text-[#6B7280] mt-1.5 px-4">
+                                        Find teammates, plus keep work and life separate by using your work email.
+                                    </p>
                                     </div>
 
                                     <button
@@ -127,36 +115,36 @@ const Index = () => {
                 </div>
             </div>
             <div className="min-h-screen  px-12">
-      <div className="">
-        <div className="flex gap-2 overflow-auto">
-          <Card 
-            title="Software Development" 
-            subtitle="PRODUCT & ISSUE TRACKING"
-            imageUrl="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80"
-          />
-          <Card 
-            title="Marketing" 
-            subtitle="PLAN & LAUNCH CAMPAIGNS"
-            imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80"
-          />
-          <Card 
-            title="IT" 
-            subtitle="PLAN & TRACK IT PROJECTS"
-            imageUrl="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80"
-          />
-          <Card 
-            title="Design" 
-            subtitle="BUILD CREATIVE WORKFLOWS"
-            imageUrl="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=300&q=80"
-          />
-          <Card 
-            title="Operations" 
-            subtitle="CREATE CUSTOM PROCESSES"
-            imageUrl="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300&q=80"
-          />
-        </div>
-      </div>
-    </div>
+                <div className="">
+                    <div className="flex  justify-center  gap-4 overflow-auto">
+                        <Card
+                            title="Software Development"
+                            subtitle="PRODUCT & ISSUE TRACKING"
+                            imageUrl="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80"
+                        />
+                        <Card
+                            title="Marketing"
+                            subtitle="PLAN & LAUNCH CAMPAIGNS"
+                            imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80"
+                        />
+                        <Card
+                            title="IT"
+                            subtitle="PLAN & TRACK IT PROJECTS"
+                            imageUrl="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80"
+                        />
+                        <Card
+                            title="Design"
+                            subtitle="BUILD CREATIVE WORKFLOWS"
+                            imageUrl="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=300&q=80"
+                        />
+                        <Card
+                            title="Operations"
+                            subtitle="CREATE CUSTOM PROCESSES"
+                            imageUrl="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300&q=80"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
